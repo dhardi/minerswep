@@ -23,14 +23,21 @@ def Game_option_validated(data_str):
     """
     Validated an input press by the user
     """
-    while True:
-        print ("Command Invalid please Try again\n")
-        if data_str == "s":
-            print("Game Screen")
-            break
-        elif data_str == "h":
-            print("Tutorial Screen")
-            break
+    if data_str == "s":
+        print("Game Screen")
+            
+    elif data_str == "h":
+        print("Tutorial Screen")
+    else:
+        while True:
+            x_str = input("Enter with S or H\n")
+            if x_str == "s":
+                print("Game Screen")
+                break
+            elif x_str == "h":
+                ("Tutorial Screen")
+                break
+            
     
 
 def main ():
