@@ -1,5 +1,6 @@
 import random 
 import pyfiglet
+import os
 
 
 T = "Miner Swep"
@@ -30,6 +31,8 @@ def Game_option_validated(data_str):
         print("Tutorial Screen")
     else:
         while True:
+            clearConsole()
+            print (game_title)
             x_str = input("Enter with S or H\n")
             if x_str == "s":
                 print("Game Screen")
@@ -38,9 +41,14 @@ def Game_option_validated(data_str):
                 ("Tutorial Screen")
                 break
             
-    
+def clearConsole():
+    command = "clear"
+    if os.name in ("nt", "dos"):  # If Machine is running on Windows, use cls
+        command = "cls"
+    os.system(command)  
 
 def main ():
+    clearConsole()
     game_menu()
     
 main()
