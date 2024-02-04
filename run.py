@@ -56,18 +56,23 @@ def clearConsole():
 def game_costruct ():
   row_data =[]
   colum_data =[]  
-  print ("example 3,5\n")
+  print ("example 3,5 or 35\n")
   data_input = input("Please select row and Colum\n")
-  """raw_data = data_input.split()"""
-  print(data_input)
+  split_number = [int(digit) for digit in str(data_input)]
+  print(split_number)
+  row_data.append(data_input[0])
+  colum_data.append(data_input[1])
+  print(row_data)
+  print(colum_data)
   create_board()
+  
 
 
 
 def create_board():
     
     for i in range(9):
-       print("[ ]"+"[ ]"+"[ ]"+"[ ]"+"[ ]"+"[ ]"+"[ ]"+ "[ ]") 
+       print(f"{i}"+"[ . ]"+"[ . ]"+"[ . ]"+"[ . ]"+"[ . ]"+"[ . ]"+"[ . ]"+ "[ . ]") 
         
            
 
