@@ -10,7 +10,13 @@ game_tuto =  pyfiglet.figlet_format(G)
 """
 Creates The Title of the game with ASCII Art
 """
+class Board:
 
+    def __init__(self,size,bombs):
+        self.size = size
+        self.board = [["." for x in range(size)]for y in  range(size)]
+        self.bombs
+    
 
 def game_menu():
     """
@@ -84,13 +90,15 @@ def check_reps_list(row_list,colum_list):
     
 
 
+
+"""
 def create_board():
     for i in range (8):
         for j in range(8):
             print(f"({i},{j})", end="")
         print()   
    
-    
+"""    
 
 
 
@@ -114,6 +122,7 @@ def game_tutorial():
                 clearConsole()
                 game_menu()
                 break
+
 def main ():
     clearConsole()
     game_menu()

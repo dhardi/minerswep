@@ -1,32 +1,75 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# MinerSwep
+ 
+MinerSwep is a game similar to minesweeper but with some changes made by me to make the game more dynamic and faster.
 
-Welcome,
+![responsive]()
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## How To Play
 
-## Reminders
+ The game starts with a board with 8 columns and 8 rows. 4 bombs are planted randomly across the board and your duty is to guess where it will be safe to step with eight attempts. If you step on a bomb you lose.
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+### Existing Features
+  
+- Menu of the Game:
+  - Main menu
+  - How To Play
+  - Start
 
-## Creating the Heroku app
+  ![Main Menu]()
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## The Game 
 
-1. `heroku/python`
-2. `heroku/nodejs`
+   
+  
+  ![Gameplay]()
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
----
+### Tips and Funfacts
+  
+ ![End of round]()
 
-Happy coding!
+ ### End of cycle
+   
+
+  ![End of Cycle]()
+
+
+# Design and Colors
+- 
+
+
+
+## Future Ideas to Implement 
+
+- Sytem of Flags
+- Timer
+- System of levels Hard Normal and Easy
+ 
+
+## Testing 
+
+During my project I set the objective of making a pokemon game with a first generation of 150 pokemons. The first challenge was to create a system that would generate a random value for each attribute and assign it to all 150 pokemons.
+After this challenge, the gameplay would come, so I created a number comparison system that in the end would compare the highest value of the attribute. To test the gameplay, I had my eight-year-old son play and explore the game.I also put my wife to play and it was vitally important for someone who is not familiar with games. 
+The game will guide you how to play, for players who still have questions about how to play, I have implemented a how to play section.
+I had a lot of problems with the game mechanics when adding events and how to compare the selected object. These problems helped me learn how the event click system works best and the type of variable we should use, but the biggest challenge was making the CPU selects a random card and a random attribute value without repeating for the entire cycle after that the array system was absorbed by me.
+
+### Validator Testing 
+
+
+
+### Unfixed Bugs
+
+
+
+
+## Deployment 
+
+
+
+## Credits
+
+ 
