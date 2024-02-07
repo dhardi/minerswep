@@ -10,13 +10,17 @@ game_tuto =  pyfiglet.figlet_format(G)
 """
 Creates The Title of the game with ASCII Art
 """
+
 class Board:
 
     def __init__(self,size,bombs):
         self.size = size
-        self.board = [["." for x in range(size)]for y in  range(size)]
+        self.board = [["." for x in range(8)]for y in  range(8)]
         self.bombs
     
+
+def create_board():
+        print(self.board)
 
 def game_menu():
     """
@@ -70,7 +74,7 @@ def game_costruct ():
     """
     row_data =[]
     colum_data =[]  
-    print ("example 35\n")
+    print ("example: 35\n")
     while True:
      try:
         data_input = input("Please select row and Colum\n")
@@ -90,6 +94,9 @@ def check_reps_list(row_list,colum_list):
     
 
 
+
+    
+        
 
 """
 def create_board():
