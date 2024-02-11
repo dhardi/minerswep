@@ -92,7 +92,7 @@ def game_costruct ():
 
 def check_reps_list(row_list,colum_list):
     print("funciona")
-    create_board()
+    
     
 
 
