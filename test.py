@@ -43,9 +43,21 @@ def mix_numbers(list_a,list_b,list_c,list_d,list_e,list_f,list_g,list_h):
     random.shuffle(list_f)
     random.shuffle(list_g)
     random.shuffle(list_h)
-    print(f"{list_a}\n{list_b}\n{list_c}\n{list_d}\n{list_e}\n{list_f}\n{list_g}\n{list_h}\n")
+    choice_data()
+    return f"{list_a}\n{list_b}\n{list_c}\n{list_d}\n{list_e}\n{list_f}\n{list_g}\n{list_h}\n"
+    
    
-main_board()  
+   
+def choice_data():
+    global row_a
+    coluna = input("digite a coluna")
+    guess_input = row_a[coluna]
+    
+  
+    
+main_board()
+
+ 
 
 
 
