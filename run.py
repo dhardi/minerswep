@@ -13,14 +13,16 @@ Creates The Title of the game with ASCII Art
 
 class Board:
 
-    def __init__(self,size,bombs):
-        self.size = size
+    def __init__(self):
+        
         self.board = [["." for x in range(8)]for y in  range(8)]
-        self.bombs
+       
     
 
 def create_board():
-        print(self.board)
+    board = Board()
+    print(board.board,"\n")
+    print(board.board.x,"\n")
 
 def game_menu():
     """
