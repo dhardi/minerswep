@@ -1,13 +1,15 @@
 import random
 
-row_a = ["x","x","x","x","x","x","x","8"]
-row_b = ["x","x","x","x","x","x","x","8"]
-row_c = ["x","x","x","x","x","x","x","8"]
-row_d = ["x","x","x","x","x","x","x","8"]
-row_e = ["x","x","x","x","x","x","x","8"]
-row_f = ["x","x","x","x","x","x","x","8"]
-row_g = ["x","x","x","x","x","x","x","8"]
-row_h = ["x","x","x","x","x","x","x","8"]
+guess_played =[]
+
+row_a = ["x","x","x","x","x","x","x","x"]
+row_b = ["x","x","x","x","x","x","x","x"]
+row_c = ["x","x","x","x","x","x","x","x"]
+row_d = ["x","x","x","x","x","x","x","x"]
+row_e = ["x","x","x","x","x","x","x","x"]
+row_f = ["x","x","x","x","x","x","x","x"]
+row_g = ["x","x","x","x","x","x","x","x"]
+row_h = ["x","x","x","x","x","x","x","x"]
 print("   1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 ")
 print(f"1{row_a}\n2{row_b}\n3{row_c}\n4{row_d}\n5{row_e}\n6{row_f}\n7{row_g}\n8{row_h}\n")
 
@@ -42,22 +44,44 @@ def mix_numbers(list_a,list_b,list_c,list_d,list_e,list_f,list_g,list_h):
     random.shuffle(list_e)
     random.shuffle(list_f)
     random.shuffle(list_g)
-    random.shuffle(list_h)
-    choice_data()
-    return f"{list_a}\n{list_b}\n{list_c}\n{list_d}\n{list_e}\n{list_f}\n{list_g}\n{list_h}\n"
+    random.shuffle(list_h)   
+    new_board(list_a,list_b,list_c,list_d,list_e,list_f,list_g,list_h)
     
    
    
-def choice_data():
-    global row_a
-    coluna = input("digite a coluna")
-    guess_input = row_a[coluna]
+def new_board(new_list_a,new_list_b,new_list_c,new_list_d,new_list_e,new_list_f,new_list_g,new_list_h,):
+    print(f"{new_list_a}\n{new_list_b}\n{new_list_c}\n{new_list_d}\n{new_list_e}\n{new_list_f}\n{new_list_g}\n{new_list_h}\n")
     
-  
+def choice_Play():
+    while True:
+        try:
+            global guess_played
+            num1, num2 = map(int, input("Enter two numbers separated by a space: \n").split())
+            input_play = (num1, num2)
+            guess_played.append(input_play)
+            print (guess_played)
+        except:
+            choice_Play()
+        finally:
+            search_board(guess_played)
+
+def search_board(pin_board):
     
-main_board()
 
- 
+def main():   
+    main_board()
+    choice_Play()
 
 
+
+def clearConsole():
+    """
+    clean the screen for the user code from https://www.delftstack.com/howto/python/python-clear-console/
+    """
+    command = "clear"
+    if os.name in ("nt", "dos"):  # If Machine is running on Windows, use cls
+        command = "cls"
+    os.system(command)  
+
+main()
 
