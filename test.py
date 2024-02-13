@@ -87,8 +87,8 @@ def search_board(pin_board):
     it will pin on the board the location of guess played 
     """
     global row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h, guess_played 
-    matrix =[row_a,row_b ,row_c ,row_d ,row_e ,row_f ,row_g ,row_h]     
-    row_guess, column_guess  = pin_board[0]
+    matrix =[row_a,row_b ,row_c ,row_d ,row_e ,row_f ,row_g ,row_h]    
+    row_guess, column_guess  = pin_board[-1] # the negative value is to take the last input from the list 
         
     
     print(matrix[row_guess][column_guess])
