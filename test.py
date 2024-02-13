@@ -7,8 +7,8 @@ display of board
 row_a = ["x","x","x","x","x","x","x","x"]
 row_b = ["x","x","x","x","x","x","x","x"]
 row_c = ["x","x","x","x","x","x","x","x"]
-row_d = ["x","x","x","x","x","x","x","x"]
-row_e = ["x","x","x","x","x","x","x","x"]
+row_d = ["x","x","x","7","x","x","x","x"]
+row_e = ["x","x","x","x","7","x","x","x"]
 row_f = ["x","x","x","x","x","x","x","x"]
 row_g = ["x","x","x","x","x","x","x","x"]
 row_h = ["x","x","x","x","x","x","x","x"]
@@ -86,13 +86,12 @@ def search_board(pin_board):
     """
     it will pin on the board the location of guess played 
     """
-    global row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h, guess_played
-    
-    row_guess = 0
-    column_guess = 0
+    global row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h, guess_played 
+    matrix =[row_a,row_b ,row_c ,row_d ,row_e ,row_f ,row_g ,row_h]     
     row_guess, column_guess  = pin_board[0]
+        
     
-    print(row_guess)
+    print(matrix[row_guess][column_guess])
 
 def main():   
     main_board()
