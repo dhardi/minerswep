@@ -1,5 +1,6 @@
 import random
 
+matrix_invisible =[]
 guess_played =[]
 """
 display of board
@@ -45,6 +46,7 @@ def mix_numbers(list_a,list_b,list_c,list_d,list_e,list_f,list_g,list_h):
     """
     it will mix the number and 8 will be our bomb 
     """
+    global matrix_invisible
     random.shuffle(list_a)
     random.shuffle(list_b)
     random.shuffle(list_c)
@@ -53,49 +55,63 @@ def mix_numbers(list_a,list_b,list_c,list_d,list_e,list_f,list_g,list_h):
     random.shuffle(list_f)
     random.shuffle(list_g)
     random.shuffle(list_h)   
-    new_board(list_a,list_b,list_c,list_d,list_e,list_f,list_g,list_h)
-    
+    #new_board(list_a,list_b,list_c,list_d,list_e,list_f,list_g,list_h)
+    matrix_invisible =[list_a,list_b,list_c,list_d,list_e,list_f,list_g,list_h]
+    print(matrix_invisible)
+    #new_board(matrix_invisible)
+    choice_Play(matrix_invisible)
    
-   
-def new_board(new_list_a,new_list_b,new_list_c,new_list_d,new_list_e,new_list_f,new_list_g,new_list_h,):
+#def new_board(new_matrix_invisible):
     """
     show the board invisible it will be delete this function
     """
-    print(f"{new_list_a}\n{new_list_b}\n{new_list_c}\n{new_list_d}\n{new_list_e}\n{new_list_f}\n{new_list_g}\n{new_list_h}\n")
+   # matrix_invisible =[new_list_a,new_list_b,new_list_c,new_list_d,new_list_e,new_list_f,new_list_g,new_list_h]
     
-def choice_Play():
+    
+    #print(f"{new_list_a}\n{new_list_b}\n{new_list_c}\n{new_list_d}\n{new_list_e}\n{new_list_f}\n{new_list_g}\n{new_list_h}\n")
+    
+def choice_Play(mtx_data):
     """
     it will get the input and make tuples and put it on a list
     """
     while True:
         try:
-            global guess_played
+            global guess_played  
             num1, num2 = map(int, input("Enter two numbers separated by a space: \n").split())
-            input_play = (num1 - 1 , num2 - 1)
+            input_play = (num1 - 1 , num2 - 1) # necessary for matches with the display row and column 
             guess_played.append(input_play)
-            print (guess_played)
+            print (mtx_data)
         except:
             """
             this it will check if the guess was played twice 
             """
             choice_Play()
         finally:
-            search_board(guess_played)
+            search_board(guess_played,mtx_data)
 
-def search_board(pin_board):
+def search_board(pin_board,mtx_data_ava):
     """
-    it will pin on the board the location of guess played 
+    it will pin on the board the location of guess played and also check if there is a bomb 
     """
-    global row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h, guess_played 
+    global row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h, guess_played
     matrix =[row_a,row_b ,row_c ,row_d ,row_e ,row_f ,row_g ,row_h]    
     row_guess, column_guess  = pin_board[-1] # the negative value is to take the last input from the list 
-        
     
-    print(matrix[row_guess ][column_guess])
+    if mtx_data_ava[row_guess ][column_guess] == 8:
+        
+        print("you lost it")
+    
+    #print(matrix[row_guess ][column_guess])
+
+
+
+
+
+
 
 def main():   
     main_board()
-    choice_Play()
+    
 
 
 
