@@ -4,14 +4,14 @@ guess_played =[]
 """
 display of board
 """
-row_a = ["x","x","x","x","x","x","x","x"]
+row_a = ["x","x","x","x","4","x","x","x"]
 row_b = ["x","x","x","x","x","x","x","x"]
 row_c = ["x","x","x","x","x","x","x","x"]
 row_d = ["x","x","x","7","x","x","x","x"]
-row_e = ["x","x","x","x","7","x","x","x"]
+row_e = ["x","x","x","x","x","x","x","x"]
 row_f = ["x","x","x","x","x","x","x","x"]
 row_g = ["x","x","x","x","x","x","x","x"]
-row_h = ["x","x","x","x","x","x","x","x"]
+row_h = ["x","x","x","x","x","x","x","9"]
 print("   1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 ")
 print(f"1{row_a}\n2{row_b}\n3{row_c}\n4{row_d}\n5{row_e}\n6{row_f}\n7{row_g}\n8{row_h}\n")
 
@@ -71,7 +71,7 @@ def choice_Play():
         try:
             global guess_played
             num1, num2 = map(int, input("Enter two numbers separated by a space: \n").split())
-            input_play = (num1, num2)
+            input_play = (num1 - 1 , num2 - 1)
             guess_played.append(input_play)
             print (guess_played)
         except:
@@ -91,7 +91,7 @@ def search_board(pin_board):
     row_guess, column_guess  = pin_board[-1] # the negative value is to take the last input from the list 
         
     
-    print(matrix[row_guess][column_guess])
+    print(matrix[row_guess ][column_guess])
 
 def main():   
     main_board()
