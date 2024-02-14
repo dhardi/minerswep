@@ -1,4 +1,5 @@
 import random
+import os
 
 matrix_invisible =[]
 guess_played =[]
@@ -98,8 +99,17 @@ def search_board(pin_board,mtx_data_ava):
     row_guess, column_guess  = pin_board[-1] # the negative value is to take the last input from the list 
     
     if mtx_data_ava[row_guess ][column_guess] == 8:
-        
+        clearConsole()
+        matrix[row_guess ][column_guess] = u"\U0001F4A3"
         print("you lost it")
+        print("   1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 ")
+        print(f"{matrix[0]}\n {matrix[1]}\n {matrix[2]}\n{matrix[3]}\n{matrix[4]}\n{matrix[5]}\n{matrix[6]}\n{matrix[7]}\n")
+    else:
+        clearConsole()
+        matrix[row_guess ][column_guess] = u"\u2705"
+        print("  1  |  2 |  3  |  4 |  5 | 6  | 7 | 8")
+        print(f"1{matrix[0]}\n2{matrix[1]}\n3{matrix[2]}\n4{matrix[3]}\n5{matrix[4]}\n6{matrix[5]}\n7{matrix[6]}\n8{matrix[7]}\n")
+        
     
     #print(matrix[row_guess ][column_guess])
 
