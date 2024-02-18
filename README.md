@@ -15,7 +15,7 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
   - How To Play
   - Start
 
-  ![Main Menu]()
+  ![Main Menu](https://github.com/dhardi/minerswep/blob/main/assets/images/menu_game.PNG)
 
 ## The Game 
 
