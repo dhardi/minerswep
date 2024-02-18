@@ -39,7 +39,8 @@ def game_tutorial():
     """
     print(game_tuto)
     print("In this game you will have to guess the safest path to step on.\n")
-    print("you will have to select two numbers the first will be your row and the other will be the column.\n")
+    print("will be your row and the other will be the column.n")
+    print("you will have to select two numbers the first \n")
     print("you have 8 attempts if you step on a mine you lose.\n")
     back_menu = input("Press M to Main Menu\n")
     if back_menu == "m":
@@ -262,9 +263,9 @@ def game_over():
 
 
 def restart_end_game():
-
     """
-    after the end of the game it will ask if the player wanna play again 
+    after the end of the game it will ask
+    if the player wanna play again
     """
 
     while True:
@@ -279,7 +280,7 @@ def restart_end_game():
 
 def reeboot_script():
     """
-    reboot the script from 0 
+    reboot the script from 0
     """
     clearConsole()
     os.execv(sys.executable, ['python'] + sys.argv)
@@ -287,7 +288,8 @@ def reeboot_script():
 
 def clearConsole():
     """
-    clean the screen for the user code from https://www.delftstack.com/howto/python/python-clear-console/
+    clean the screen for the user code from
+    https://www.delftstack.com/howto/python/python-clear-console/
     """
     command = "clear"
     if os.name in ("nt", "dos"):  # If Machine is running on Windows, use cls

@@ -36,19 +36,18 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
  ### End of cycle
    - The game ends if you step on one of the bombs or when you manage to go eight times without stepping on the bomb
 
-  ![lost]()
+  ![lost](https://github.com/dhardi/minerswep/blob/main/assets/images/lost.PNG)
 
-
-# Design and Colors
-- 
+  ### Win
+   ![win](https://github.com/dhardi/minerswep/blob/main/assets/images/win.PNG)
 
 
 
 ## Future Ideas to Implement 
 
-- Sytem of Flags
+- level dificult 
 - Timer
-- System of levels Hard Normal and Easy
+- system of guessing 
  
 
 ## Testing 
@@ -65,9 +64,18 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 
 
 ## Deployment 
-
+-The Site was Deployed to GitHub. The steps to deploy are as Fallows
+-From the project's repository, go to the Settings tab.
+-From the left-hand menu, select the Pages tab.
+-Under the Source section, select the Main branch from the drop-down menu and click Save.
+-A message will be displayed to indicate a successful deployment to GitHub pages and provide the live link.
 
 
 ## Credits
 
- -Firstly, I would like to mention my tutor who was a great help to my development, I would like to thank my wife for her help with color choices. Below I will provide the links to the content to produce the website.
+ -Firstly, I would like to mention my tutor who was a great help to my development, I would like to thank my wife for support. Below I will provide the links to the content to produce the website.
+
+  - https://en.wikipedia.org/
+  -https://www.delftstack.com/howto/python/python-clear-console/
+  -https://www.fileformat.info/info/unicode/
+  -https://pypi.org/project/pyfiglet/
