@@ -8,6 +8,8 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 
  The game starts with a board with 8 columns and 8 rows. 4 bombs are planted randomly across the board and your duty is to guess where it will be safe to step . If you step on a bomb you lose.
 
+ ![howtoplaymenu](https://github.com/dhardi/minerswep/blob/main/assets/images/howtoplay.PNG)
+
 ### Existing Features
   
 - Menu of the Game:
@@ -55,7 +57,8 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
  
 
 ## Testing 
-- During the development of this game I had several problems in creating the board, including dealing with input errors. Firstly, at the beginning of the project, I was trying to create a class and use it during the script, but it was not possible. I used a matrix system that consists of eight arrays that will interacting during the execution of the program, dealing with errors was also a challenge to execute my project because each interaction we have to treat the player's input at each stage
+- During the development of this game I had several problems in creating the board, including dealing with input errors. Firstly, at the beginning of the project, I was trying to create a class and use it during the script, but it was not possible. I used a matrix system that consists of eight arrays that will interacting during the execution of the program, dealing with errors was also a challenge to execute my project because each interaction we have to treat the player's input at each stage.
+-Throughout the project I created a second tab with the name test.py which was essential for the development of most of the tests and creation of methods out of this tab at the end of the project the final project all data from the test.py tab was copied to main tab run.py
 
 
 ### Validator Testing 
