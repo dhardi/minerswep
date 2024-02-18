@@ -171,7 +171,7 @@ def choice_Play(mtx_data):
             
             continue
 
-            if  num1 <= 8 and num2 <= 8:
+            if  num1 > 8 and num2 > 8:
                 print("Please enter numbers between 1 and 8.")
                 
                 continue

@@ -21,11 +21,7 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
  -the game consists of using arrays like the board and interacts depending on your input and placing eight numbers in each array eight will be our bomb if he selects that number he will lose the game if he makes eight attempts and manages to pass without selecting the bomb you will be the winner
    
     -Every turn, if your move does not locate the bomb on the display, a green icon will appear representing that you are safe.
-  ![Gameplay]()
-
-
-
-
+  ![Gameplay](https://github.com/dhardi/minerswep/blob/main/assets/images/turn.PNG)
 
 
 ### Tips and Funfacts
@@ -51,7 +47,7 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
  
 
 ## Testing 
-
+- During the development of this game I had several problems in creating the board, including dealing with input errors. Firstly, at the beginning of the project, I was trying to create a class and use it during the script, but it was not possible. I used a matrix system that consists of eight arrays that will interacting during the execution of the program, dealing with errors was also a challenge to execute my project because each interaction we have to treat the player's input at each stage
 
 
 ### Validator Testing 
