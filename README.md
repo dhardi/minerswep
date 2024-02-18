@@ -29,13 +29,14 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 
 
 ### Tips and Funfacts
-  
- ![End of round]()
+  -A fun fact about Minesweeper, the classic computer game, is that it was created by Microsoft intern Robert Donner in 1989. The game was included in the Windows operating system starting from Windows 3.1, and it quickly became a popular pastime for many computer users. Despite its simple concept of clearing mines from a grid without detonating them, Minesweeper can be surprisingly addictive and challenging, leading to countless hours of gameplay for players around the world. Additionally, Minesweeper has inspired various competitions and even research into algorithmic strategies for solving the game efficiently.
+
+ ![originalgame](https://github.com/dhardi/minerswep/blob/main/assets/images/minesweeper.png)
 
  ### End of cycle
-   
+   - The game ends if you step on one of the bombs or when you manage to go eight times without stepping on the bomb
 
-  ![End of Cycle]()
+  ![lost]()
 
 
 # Design and Colors

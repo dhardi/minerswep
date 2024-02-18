@@ -5,7 +5,7 @@ import sys
 
 T = "Miner Swep"
 G = "Game Tutorial"
-L= "YOU LOST"
+L = "YOU LOST"
 W = "YOU WIN"
 lives = 0
 game_title = pyfiglet.figlet_format(T)
@@ -13,7 +13,7 @@ game_tuto = pyfiglet.figlet_format(G)
 message_lost = pyfiglet.figlet_format(L)
 message_win = pyfiglet.figlet_format(W)
 
-
+input_play = ()
 matrix_invisible = []
 """
 display of board
@@ -25,7 +25,7 @@ row_d = ["x", "x", "x", "x", "x", "x", "x", "x"]
 row_e = ["x", "x", "x", "x", "x", "x", "x", "x"]
 row_f = ["x", "x", "x", "x", "x", "x", "x", "x"]
 row_g = ["x", "x", "x", "x", "x", "x", "x", "x"]
-row_h = ["x", "x", "x", "x", "x", "x", "x", "9"]
+row_h = ["x", "x", "x", "x", "x", "x", "x", "x"]
 
 
 def main():
@@ -157,17 +157,20 @@ def choice_Play(mtx_data):
     """
     it will get the input and make tuples and put it on a list
     """
-    
-    guess_played = []
 
+    guess_played = []
+    global input_play
+    num1 = 0
+    num2 = 0
     while True:
         try:
             num1, num2 = map(
                 int, input("Enter two numbers separated by a space: \n").split())
             input_play = (num1 - 1, num2 - 1)
-            
+
             guess_played.append(input_play)
             search_board(guess_played, mtx_data)
+
             print(lives)
             break
 
@@ -181,17 +184,23 @@ def choice_Play(mtx_data):
                 search_board(guess_played, mtx_data)
 
         except BaseException:
-            if input_play in guess_played:
+
+            if type(num1) == str and type(num2) == str:
                 num1, num2 = map(
-                    int, input("Enter two numbers separated by a space: \n").split())
-                   
-            
+                    int, input("Please press integers numbers \n").split())
+            else:
+                input_play = (num1 - 1, num2 - 1)
+                guess_played.append(input_play)
+                search_board(guess_played, mtx_data)
 
         finally:
-            num1, num2 = map(
-                int, input("Enter two numbers separated by a space: \n").split())
-            if type(num1) == str and type(num2) == str:
-                choice_Play(mtx_data)
+            if input_play in guess_played:
+                num1, num2 = map(
+                    int, input("guess already played try again \n").split())
+            else:
+                input_play = (num1 - 1, num2 - 1)
+                guess_played.append(input_play)
+                search_board(guess_played, mtx_data)
 
 
 def search_board(pin_board, mtx_data_ava):
@@ -222,7 +231,7 @@ def search_board(pin_board, mtx_data_ava):
     else:
         clearConsole()
         print(lives)
-        
+
         matrix[row_guess][column_guess] = u"\u2705"
         print("  1  |  2 |  3  |  4 |  5 | 6  | 7 | 8")
         print(
@@ -234,12 +243,17 @@ def search_board(pin_board, mtx_data_ava):
                         matrix[4]}\n6{
                             matrix[5]}\n7{
                                 matrix[6]}\n8{
-                                    matrix[7]}\n")   
+                                    matrix[7]}\n")
         game_over()
         choice_Play(mtx_data_ava)
+
+
 def game_over():
+    """
+    every guess counts +1 with 8 turns the game over
+    """
     global lives
-    lives +=1
+    lives += 1
 
     if lives == 9:
         clearConsole()
@@ -248,24 +262,27 @@ def game_over():
 
 
 def restart_end_game():
-    
+
+    """
+    after the end of the game it will ask if the player wanna play again 
+    """
+
     while True:
         restart_game = input("Do you wanna play Again press R\n")
         if restart_game == "r":
             reeboot_script()
             break
         else:
-           reeboot_script()
-           break
-
-
+            reeboot_script()
+            break
 
 
 def reeboot_script():
+    """
+    reboot the script from 0 
+    """
     clearConsole()
     os.execv(sys.executable, ['python'] + sys.argv)
-
-
 
 
 def clearConsole():
