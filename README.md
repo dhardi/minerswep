@@ -20,7 +20,7 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 ## The Game 
  -the game consists of using arrays like the board and interacts depending on your input and placing eight numbers in each array eight will be our bomb if he selects that number he will lose the game if he makes eight attempts and manages to pass without selecting the bomb you will be the winner
    
-    -Every turn, if your move does not locate the bomb on the display, a green icon will appear representing that you are safe.
+ -Every turn, if your move does not locate the bomb on the display, a green icon will appear representing that you are safe.
   ![Gameplay](https://github.com/dhardi/minerswep/blob/main/assets/images/turn.PNG)
 
 
