@@ -1,11 +1,17 @@
 import random
 import os
 import pyfiglet
+import sys
 
 T = "Miner Swep"
 G = "Game Tutorial"
+L= "YOU LOST"
+W = "YOU WIN"
+lives = 0
 game_title = pyfiglet.figlet_format(T)
 game_tuto = pyfiglet.figlet_format(G)
+message_lost = pyfiglet.figlet_format(L)
+message_win = pyfiglet.figlet_format(W)
 
 
 matrix_invisible = []
@@ -151,6 +157,7 @@ def choice_Play(mtx_data):
     """
     it will get the input and make tuples and put it on a list
     """
+    
     guess_played = []
 
     while True:
@@ -158,8 +165,10 @@ def choice_Play(mtx_data):
             num1, num2 = map(
                 int, input("Enter two numbers separated by a space: \n").split())
             input_play = (num1 - 1, num2 - 1)
+            
             guess_played.append(input_play)
             search_board(guess_played, mtx_data)
+            print(lives)
             break
 
         except BaseException:
@@ -189,7 +198,7 @@ def search_board(pin_board, mtx_data_ava):
     """
     it will pin on the board the location of guess played and also check if there is a bomb
     """
-    global row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h, guess_played
+    global row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h, guess_played, lives
     matrix = [row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h]
     # the negative value is to take the last input from the list
     row_guess, column_guess = pin_board[-1]
@@ -197,7 +206,7 @@ def search_board(pin_board, mtx_data_ava):
     if mtx_data_ava[row_guess][column_guess] == 8:
         clearConsole()
         matrix[row_guess][column_guess] = u"\U0001F4A3"
-        print("you lost it")
+        print(message_lost)
         print("   1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 ")
         print(
             f"{
@@ -209,9 +218,11 @@ def search_board(pin_board, mtx_data_ava):
                             matrix[5]}\n{
                                 matrix[6]}\n{
                                     matrix[7]}\n")
-        choice_Play(mtx_data_ava)
+        restart_end_game()
     else:
         clearConsole()
+        print(lives)
+        
         matrix[row_guess][column_guess] = u"\u2705"
         print("  1  |  2 |  3  |  4 |  5 | 6  | 7 | 8")
         print(
@@ -223,8 +234,38 @@ def search_board(pin_board, mtx_data_ava):
                         matrix[4]}\n6{
                             matrix[5]}\n7{
                                 matrix[6]}\n8{
-                                    matrix[7]}\n")
+                                    matrix[7]}\n")   
+        game_over()
         choice_Play(mtx_data_ava)
+def game_over():
+    global lives
+    lives +=1
+
+    if lives == 9:
+        clearConsole()
+        print(f"{message_win}\n")
+        restart_end_game()
+
+
+def restart_end_game():
+    
+    while True:
+        restart_game = input("Do you wanna play Again press R\n")
+        if restart_game == "r":
+            reeboot_script()
+            break
+        else:
+           reeboot_script()
+           break
+
+
+
+
+def reeboot_script():
+    clearConsole()
+    os.execv(sys.executable, ['python'] + sys.argv)
+
+
 
 
 def clearConsole():
