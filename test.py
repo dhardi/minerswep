@@ -13,7 +13,6 @@ game_tuto = pyfiglet.figlet_format(G)
 message_lost = pyfiglet.figlet_format(L)
 message_win = pyfiglet.figlet_format(W)
 
-input_play = ()
 matrix_invisible = []
 """
 display of board
@@ -160,49 +159,39 @@ def choice_Play(mtx_data):
     """
 
     guess_played = []
-    global input_play
-    num1 = 0
-    num2 = 0
+    
     while True:
         try:
             num1, num2 = map(
                 int, input("Enter two numbers separated by a space: \n").split())
             input_play = (num1 - 1, num2 - 1)
-
             guess_played.append(input_play)
             search_board(guess_played, mtx_data)
+             
+            
+            continue
 
-            print(lives)
-            break
-
-        except BaseException:
-            if num1 > 8 and num2 > 8:
-                num1, num2 = map(
-                    int, input("Enter two numbers separated by a space: \n").split())
-            else:
-                input_play = (num1 - 1, num2 - 1)
-                guess_played.append(input_play)
-                search_board(guess_played, mtx_data)
-
-        except BaseException:
+            if  num1 <= 8 and num2 <= 8:
+                print("Please enter numbers between 1 and 8.")
+                
+                continue
+           
 
             if type(num1) == str and type(num2) == str:
                 num1, num2 = map(
-                    int, input("Please press integers numbers \n").split())
-            else:
-                input_play = (num1 - 1, num2 - 1)
-                guess_played.append(input_play)
-                search_board(guess_played, mtx_data)
+                    int, input("Please enter integers numbers \n").split())
+                continue
 
-        finally:
             if input_play in guess_played:
-                num1, num2 = map(
-                    int, input("guess already played try again \n").split())
-            else:
-                input_play = (num1 - 1, num2 - 1)
-                guess_played.append(input_play)
-                search_board(guess_played, mtx_data)
+                print("You have already guessed this position. Please try again.")
+                continue
 
+            
+            break
+           
+        except ValueError:
+            # Handle the ValueError if the input cannot be converted to integers
+            print("Please enter two integers separated by a space.")
 
 def search_board(pin_board, mtx_data_ava):
     """
