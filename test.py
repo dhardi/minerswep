@@ -164,34 +164,26 @@ def choice_Play(mtx_data):
         try:
             num1, num2 = map(
                 int, input("Enter two numbers separated by a space: \n").split())
-            input_play = (num1 - 1, num2 - 1)
-            guess_played.append(input_play)
-            search_board(guess_played, mtx_data)
-             
             
-            continue
-
-            if  num1 > 8 and num2 > 8:
+            # Check if the input values are within the range of 1 to 8
+            if num1 < 1 or num1 > 8 or num2 < 1 or num2 > 8:
                 print("Please enter numbers between 1 and 8.")
-                
-                continue
-           
-
-            if type(num1) == str and type(num2) == str:
-                num1, num2 = map(
-                    int, input("Please enter integers numbers \n").split())
                 continue
 
+            input_play = (num1 - 1, num2 - 1)
+            
+            # Check if the input has already been guessed
             if input_play in guess_played:
                 print("You have already guessed this position. Please try again.")
                 continue
 
-            
+            guess_played.append(input_play)
+            search_board(guess_played, mtx_data)
             break
            
         except ValueError:
             # Handle the ValueError if the input cannot be converted to integers
-            print("Please enter two integers separated by a space.")
+            print("Please enter two integers separated by a space.")    
 
 def search_board(pin_board, mtx_data_ava):
     """
