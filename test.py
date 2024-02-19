@@ -2,7 +2,7 @@ import random
 import os
 import pyfiglet
 import sys
-
+guess_played = []
 T = "Miner Swep"
 G = "Game Tutorial"
 L = "YOU LOST"
@@ -41,7 +41,7 @@ def game_tutorial():
     print("will be your row and the other will be the column.n")
     print("you will have to select two numbers the first \n")
     print("you have 8 attempts if you step on a mine you lose.\n")
-    back_menu = input("Press M to Main Menu\n")
+    back_menu = input("Press M to Main Menu\n").lower()
     if back_menu == "m":
         clearConsole()
         game_menu()
@@ -88,7 +88,7 @@ def game_menu():
     print(game_title)
     print("Press S to Start\n")
     print("Press H to How to Play\n")
-    selected = input("Enter with S or H\n")
+    selected = input("Enter with S or H\n").lower()
     Game_option_validated(selected)
 
 
@@ -149,7 +149,7 @@ def mix_numbers(
         list_f,
         list_g,
         list_h]
-    print(matrix_invisible)
+    
     choice_Play(matrix_invisible)
 
 
@@ -158,8 +158,8 @@ def choice_Play(mtx_data):
     it will get the input and make tuples and put it on a list
     """
 
-    guess_played = []
-    
+    global guess_played
+
     while True:
         try:
             num1, num2 = map(
@@ -177,13 +177,15 @@ def choice_Play(mtx_data):
                 print("You have already guessed this position. Please try again.")
                 continue
 
+            print("New guess added:", input_play)
             guess_played.append(input_play)
             search_board(guess_played, mtx_data)
             break
            
         except ValueError:
             # Handle the ValueError if the input cannot be converted to integers
-            print("Please enter two integers separated by a space.")    
+            print("Please enter two integers separated by a space.")
+
 
 def search_board(pin_board, mtx_data_ava):
     """
@@ -250,7 +252,7 @@ def restart_end_game():
     """
 
     while True:
-        restart_game = input("Do you wanna play Again press R\n")
+        restart_game = input("Thanks for Play press any button\n").lower()
         if restart_game == "r":
             reeboot_script()
             break
