@@ -63,7 +63,7 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 
 
 ### Validator Testing 
-
+![pipValidator](https://github.com/dhardi/minerswep/blob/main/assets/images/validation_errors.PNG)
 
 
 ### Unfixed Bugs
@@ -72,11 +72,31 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 
 
 ## Deployment 
+
 -The Site was Deployed to GitHub. The steps to deploy are as Fallows
 -From the project's repository, go to the Settings tab.
 -From the left-hand menu, select the Pages tab.
 -Under the Source section, select the Main branch from the drop-down menu and click Save.
 -A message will be displayed to indicate a successful deployment to GitHub pages and provide the live link.
+
+## Deployment Heroku
+
+-Log in to Heroku or create an account if required.
+-click the button labeled New from the dashboard in the top right corner, just below the header.
+-From the drop-down menu select "Create new app".
+-Enter a unique app name. I combined my GitHub user name and the game's name with a dash between them (dnlbowers-battleship) for this project.
+-Once the web portal shows the green tick to confirm the name is original select the relevant region. 
+-When happy with your choice of name and that the correct region is selected, click on the "Create app" button.
+-This will bring you to the project "Deploy" tab. From here, navigate to the settings tab and scroll down to the "Config Vars" section.
+-Click the button labelled "Reveal Config Vars" and enter the "key" as port, the "value" as 8000 and click the "add" button.
+-Scroll down to the buildpacks section of the settings page and click the button labeled " add buildpack," select "Python," and click "Save Changes".
+-Repeat step 11 but this time add "node.js" instead of python.
+-Scroll back to the top of the settings page, and navigate to the "Deploy" tab
+-From the deploy tab select Github as the deployment method.
+-Confirm you want to connect to GitHub.
+-Search for the repository name and click the connect button next to the intended repository.
+-From the bottom of the deploy page select your preferred deployment type
+-deploy
 
 
 ## Credits
