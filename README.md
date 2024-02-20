@@ -87,13 +87,18 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 
 - sys provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.
 
-## Deployment 
+## Deployment Github
 
 -The Site was Deployed to GitHub. The steps to deploy are as Fallows
+
 -From the project's repository, go to the Settings tab.
+
 -From the left-hand menu, select the Pages tab.
+
 -Under the Source section, select the Main branch from the drop-down menu and click Save.
+
 -A message will be displayed to indicate a successful deployment to GitHub pages and provide the live link.
+
 
 ## Deployment Heroku
 
