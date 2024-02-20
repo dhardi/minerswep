@@ -67,7 +67,7 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 
 
 ### Unfixed Bugs
-- I had to use global Var one of my variables otherwise it will crash the game, i Know it not recommended to use Global variables.
+- I had to use global Var one of my variables otherwise it will crash the game, i Know it not recommended to use Global variables , the board has a issue when you play along the board gets crooked and not a
 
 
 
@@ -84,6 +84,9 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
  -Firstly, I would like to mention my tutor who was a great help to my development, I would like to thank my wife for support. Below I will provide the links to the content to produce the website.
 
   - https://en.wikipedia.org/
+
   -https://www.delftstack.com/howto/python/python-clear-console/
+
   -https://www.fileformat.info/info/unicode/
+
   -https://pypi.org/project/pyfiglet/

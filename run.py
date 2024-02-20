@@ -97,8 +97,7 @@ def main_board():
     create a second board it will not be visible to the player
     """
     print("   1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 ")
-    print(f"1{row_a}\n2{row_b}\n3{row_c}\n4{row_d}\n5{
-          row_e}\n6{row_f}\n7{row_g}\n8{row_h}\n")
+    print(f"1{row_a}\n2{row_b}\n3{row_c}\n4{row_d}\n5{row_e}\n6{row_f}\n7{row_g}\n8{row_h}\n")
     a = []
     b = []
     c = []
