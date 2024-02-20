@@ -33,7 +33,7 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
  ![originalgame](https://github.com/dhardi/minerswep/blob/main/assets/images/minesweeper.png)
 
  ### End of cycle
-   - The game ends if you step on one of the bombs or when you manage to go eight times without stepping on the bomb
+   -The game ends if you step on one of the bombs or when you manage to go eight times without stepping on the bomb
 
   ![lost](https://github.com/dhardi/minerswep/blob/main/assets/images/lost.PNG)
 
@@ -77,7 +77,15 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 ### Unfixed Bugs
 - I had to use global Var one of my variables otherwise it will crash the game, i Know it not recommended to use Global variables , the board has a issue when you play along the board gets crooked does not align with the numbers.
 
+## Libraries
 
+- Random number generator function that generates a random 
+
+- Os creating files and directories, management of files and directories, input, output, environment variables, process management, etc
+
+- pyfiglet It takes ASCII text and renders it in ASCII art fonts
+
+- sys provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.
 
 ## Deployment 
 
@@ -90,28 +98,43 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 ## Deployment Heroku
 
 -Log in to Heroku or create an account if required.
+
 -click the button labeled New from the dashboard in the top right corner, just below the header.
+
 -From the drop-down menu select "Create new app".
+
 -Enter a unique app name. I combined my GitHub user name and the game's name with a dash between them (dnlbowers-battleship) for this project.
+
 -Once the web portal shows the green tick to confirm the name is original select the relevant region. 
+
 -When happy with your choice of name and that the correct region is selected, click on the "Create app" button.
+
 -This will bring you to the project "Deploy" tab. From here, navigate to the settings tab and scroll down to the "Config Vars" section.
+
 -Click the button labelled "Reveal Config Vars" and enter the "key" as port, the "value" as 8000 and click the "add" button.
+
 -Scroll down to the buildpacks section of the settings page and click the button labeled " add buildpack," select "Python," and click "Save Changes".
+
 -Repeat step 11 but this time add "node.js" instead of python.
+
 -Scroll back to the top of the settings page, and navigate to the "Deploy" tab
+
 -From the deploy tab select Github as the deployment method.
+
 -Confirm you want to connect to GitHub.
+
 -Search for the repository name and click the connect button next to the intended repository.
+
 -From the bottom of the deploy page select your preferred deployment type
--deploy
+
+-Deploy
 
 
 ## Credits
 
  -Firstly, I would like to mention my tutor who was a great help to my development, I would like to thank my wife for support. Below I will provide the links to the content to produce the website.
 
-  - https://en.wikipedia.org/
+  -https://en.wikipedia.org/
 
   -https://www.delftstack.com/howto/python/python-clear-console/
 
