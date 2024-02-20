@@ -67,7 +67,7 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
 
 
 ### Unfixed Bugs
-- I had to use global Var one of my variables otherwise it will crash the game, i Know it not recommended to use Global variables , the board has a issue when you play along the board gets crooked and not a
+- I had to use global Var one of my variables otherwise it will crash the game, i Know it not recommended to use Global variables , the board has a issue when you play along the board gets crooked does not align with the numbers.
 
 
 
