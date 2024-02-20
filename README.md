@@ -2,7 +2,7 @@
  
 MinerSwep is a game similar to minesweeper but with some changes made by me to make the game more dynamic and faster.
 
-![responsive]()
+
 
 ## How To Play
 
@@ -45,10 +45,10 @@ MinerSwep is a game similar to minesweeper but with some changes made by me to m
   - We have three stages of dealing with errors that may occur when the user enters data, first we check if the values are greater than in the column and row, the second stage we check if the input type is date and number or str and lastly we check if the values have already been entered by the user.
 
  ### Bigger numbers
- ![win](https://github.com/dhardi/minerswep/blob/main/assets/images/win.PNG)
+ ![win](https://github.com/dhardi/minerswep/blob/main/assets/images/bigger_9.PNG)
 
  ### Guess Played 
- ![Guess Played](https://github.com/dhardi/minerswep/blob/main/assets/images/win.PNG)
+ ![Guess Played](https://github.com/dhardi/minerswep/blob/main/assets/images/already_played.PNG)
 
 
 
