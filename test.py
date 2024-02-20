@@ -149,7 +149,7 @@ def mix_numbers(
         list_f,
         list_g,
         list_h]
-    
+
     choice_Play(matrix_invisible)
 
 
@@ -163,35 +163,44 @@ def choice_Play(mtx_data):
     while True:
         try:
             num1, num2 = map(
-                int, input("Enter two numbers separated by a space: \n").split())
-            
+                int, input("Enter two numbers separated\
+                by a space: \n").split())
+                
+
             # Check if the input values are within the range of 1 to 8
             if num1 < 1 or num1 > 8 or num2 < 1 or num2 > 8:
                 print("Please enter numbers between 1 and 8.")
                 continue
 
             input_play = (num1 - 1, num2 - 1)
-            
-            # Check if the input has already been guessed
+
+            # Check if the input
+            # has already been guessed
             if input_play in guess_played:
-                print("You have already guessed this position. Please try again.")
+                print("You have already guessed this\
+                 position. Please try again."
+                      )
                 continue
 
             print("New guess added:", input_play)
             guess_played.append(input_play)
             search_board(guess_played, mtx_data)
             break
-           
+
         except ValueError:
-            # Handle the ValueError if the input cannot be converted to integers
+            # Handle the ValueError if the input cannot be converted to
+            # integers
             print("Please enter two integers separated by a space.")
 
 
 def search_board(pin_board, mtx_data_ava):
     """
-    it will pin on the board the location of guess played and also check if there is a bomb
+    it will pin on the board the location of
+    guess played and also
+    check if there is a bomb
     """
-    global row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h, guess_played, lives
+    global row_a, row_b, row_c, row_d, row_e
+    global row_f, row_g, row_h, guess_played, lives
     matrix = [row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h]
     # the negative value is to take the last input from the list
     row_guess, column_guess = pin_board[-1]

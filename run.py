@@ -2,7 +2,7 @@ import random
 import os
 import pyfiglet
 import sys
-
+guess_played = []
 T = "Miner Swep"
 G = "Game Tutorial"
 L = "YOU LOST"
@@ -41,7 +41,7 @@ def game_tutorial():
     print("will be your row and the other will be the column.n")
     print("you will have to select two numbers the first \n")
     print("you have 8 attempts if you step on a mine you lose.\n")
-    back_menu = input("Press M to Main Menu\n")
+    back_menu = input("Press M to Main Menu\n").lower()
     if back_menu == "m":
         clearConsole()
         game_menu()
@@ -88,7 +88,7 @@ def game_menu():
     print(game_title)
     print("Press S to Start\n")
     print("Press H to How to Play\n")
-    selected = input("Enter with S or H\n")
+    selected = input("Enter with S or H\n").lower()
     Game_option_validated(selected)
 
 
@@ -149,7 +149,7 @@ def mix_numbers(
         list_f,
         list_g,
         list_h]
-    print(matrix_invisible)
+
     choice_Play(matrix_invisible)
 
 
@@ -158,40 +158,49 @@ def choice_Play(mtx_data):
     it will get the input and make tuples and put it on a list
     """
 
-    guess_played = []
+    global guess_played
 
     while True:
         try:
             num1, num2 = map(
-                int, input("Enter two numbers separated by a space: \n").split())
-            
+                int, input("Enter two numbers separated\
+                by a space: \n").split())
+                
+
             # Check if the input values are within the range of 1 to 8
             if num1 < 1 or num1 > 8 or num2 < 1 or num2 > 8:
                 print("Please enter numbers between 1 and 8.")
                 continue
 
             input_play = (num1 - 1, num2 - 1)
-            
-            # Check if the input has already been guessed
+
+            # Check if the input
+            # has already been guessed
             if input_play in guess_played:
-                print("You have already guessed this position. Please try again.")
+                print("You have already guessed this\
+                 position. Please try again."
+                      )
                 continue
 
             print("New guess added:", input_play)
             guess_played.append(input_play)
             search_board(guess_played, mtx_data)
             break
-           
+
         except ValueError:
-            # Handle the ValueError if the input cannot be converted to integers
+            # Handle the ValueError if the input cannot be converted to
+            # integers
             print("Please enter two integers separated by a space.")
 
 
 def search_board(pin_board, mtx_data_ava):
     """
-    it will pin on the board the location of guess played and also check if there is a bomb
+    it will pin on the board the location of
+    guess played and also
+    check if there is a bomb
     """
-    global row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h, guess_played, lives
+    global row_a, row_b, row_c, row_d, row_e
+    global row_f, row_g, row_h, guess_played, lives
     matrix = [row_a, row_b, row_c, row_d, row_e, row_f, row_g, row_h]
     # the negative value is to take the last input from the list
     row_guess, column_guess = pin_board[-1]
@@ -214,7 +223,7 @@ def search_board(pin_board, mtx_data_ava):
         restart_end_game()
     else:
         clearConsole()
-        print(lives)
+        
 
         matrix[row_guess][column_guess] = u"\u2705"
         print("  1  |  2 |  3  |  4 |  5 | 6  | 7 | 8")
@@ -252,7 +261,7 @@ def restart_end_game():
     """
 
     while True:
-        restart_game = input("Do you wanna play Again press R\n")
+        restart_game = input("Thanks for Play press any button\n").lower()
         if restart_game == "r":
             reeboot_script()
             break
