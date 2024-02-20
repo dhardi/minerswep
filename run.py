@@ -229,7 +229,7 @@ def game_over():
     global lives
     lives += 1
 
-    if lives == 9:
+    if lives == 7:
         clearConsole()
         print(f"{message_win}\n")
         restart_end_game()
